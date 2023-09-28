@@ -3,6 +3,8 @@
 ## Description
 IP module that compromise the speed regulator for a motor. <br>
 The module is part of a larger SoC project, where the speed of the motor is then encoded using a quadrature encoder, decoded using a quadrature decoder and read as velocity given the increment/decrement signals. The velocities are further displayed on a seven segment display. 
+<br>
+Testbenches for the quadrature decoder, the self-test module, and synchronizers are supplied. 
 
 ## Dependencies
 IEEE
@@ -16,3 +18,6 @@ The signal is fed through an output synchronizer because the data is read outsid
 (input from external sources may change at random and create metastability and unpredictable behaviours in registers, and the output may be the souce of glitches. Synchronization takes care of these two hazards).
 The synchronized input (coming from a quadrature encoder) is fed through a quadrature decoder.
 The quadrature decoder provides increment/decrement signals which are fed to a velocity reader (pre-written) which then is fed to a 7 segment display. 
+
+## Usage
+Open Modelsim, run appropriate DO-file
