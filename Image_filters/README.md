@@ -1,4 +1,4 @@
-## Assignment 4
+# Image filters
 I ran the code in Anaconda Spyder 4 with python 3.8, tested on VMWare Horizon remote from ifi workspace with python 3. Necessary packages: 
 Numpy
 timeit
