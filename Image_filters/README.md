@@ -6,19 +6,9 @@ time
 cProfile
 matplotlib
 
-## Task 4.0
-
-### Functionality
-Times the functions of the supplied code test_slow_rectangle.py.
-The times from my test runs are recorded in the report.txt files. 
-
-### Usage
-Save files in same directory for import of the test_slow_rectangle file to work.
-In Spyder it is important to set the source directory to the directory where the files are located. 
-Run the code in an IDE or from command line, it prints the results to screen (python3 filename.py)
-
 ## Task 4.1
 I understood the Numba part of the task to use the pure Python loops.
+
 ### Functionality
 Converts an image to a grayscale version using different implementations
 
@@ -31,18 +21,18 @@ Requires manual compile of cython file before run
 ### Usage
 For python_color2gray.py, numpy_color2gray.py and numba_color2gray.py:
 Takes 1 argument containing the file name (with file type extension, eg .jpg) of the file to be converted.
-Run from command line: python3 python_color2gray.py filename.filetype
-(might be an other command for invoking the python interpreter depending on python version and terminal, my Anaconda prompt uses simply py)
+Run from the command line: python3 python_color2gray.py filename.filetype
+(might be another command for invoking the Python interpreter depending on Python version and terminal, my Anaconda prompt uses simply py)
 
 For cython_color2gray.py:
-The file containing the cython code needs to be compiled first. To do so, run the following command:
+The file containing the Cython code needs to be compiled first. To do so, run the following command:
    python3 setup.py build_ext --inplace
 
 Then run the cython_color2gray.py file from the command line, with the file name argument:
    python3 cython_color2gray.py filename.filetype
    
-   (For cython code not using command line arguments the file can also be run without a separate run file by 
-   invoking the python interpreter (running the command python3 + return) then >>> import filename (where the cython code is written, without filetype extension))
+   (For python code not using command line arguments the file can also be run without a separate run file by 
+   invoking the python interpreter (running the command python3 + return) then >>> import filename (where the Cython code is written, without filetype extension))
 
 ### Dependencies
 OpenCV to process the image
@@ -51,7 +41,7 @@ Numba
 Cython
 Cython code also needs a C-compiler to run. Linux systems (like the IFI-machines) already have them installed, Windows do not.
 
-The necessary packages are described in requirements.txt and is downloaded to a virtual environment\* using the command:
+The necessary packages are described in requirements.txt and are downloaded to a virtual environment\* using the command:
    pip install -r requirements.txt
 
 
@@ -72,15 +62,14 @@ Converts an image to a sepia version using different implementations
 The time tests are all executed on the supplied rain.jpg file, size 400 x 600 x 3 (H x W x C), as in task 4.1
 
 ### Missing functionality
-Got best results using Numpy, might have overlooked some possibility for improvements in the cython code as 
+Got the best results using Numpy, might have overlooked some possibility for improvements in the cython code as 
 I suspect a perfecly implemented cython algorithm should be even faster than numpy
 
 ### Usage
-See Task 4.1, runs the exact same way except the names of the modules is to be changed from \_color2gray to \_color2sepia (eg python3 python_color2sepia.py filename.filetype)
+See Task 4.1, runs the exact same way except the names of the modules are to be changed from \_color2gray to \_color2sepia (eg python3 python_color2sepia.py filename.filetype)
 
 ### Dependencies
 Dependencies as stated in task 4.1. All are found in the requirements.txt file. 
-
 
 ## Task 4.3
 
