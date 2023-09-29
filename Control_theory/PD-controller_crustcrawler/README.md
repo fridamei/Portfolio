@@ -3,6 +3,7 @@ Prosjekt i TEK4030
 Simulering av crustcrawler med PD-kontroller med 'gravity compensation'
 Setup simulering: 
 https://github.uio.no/INF3480/crustcrawler_simulation/wiki/Setup
+
 ## Testing 
 For å kjøre selve crustcrawler-simuleringen (uten PD-kontrolleren):
 ```bash
