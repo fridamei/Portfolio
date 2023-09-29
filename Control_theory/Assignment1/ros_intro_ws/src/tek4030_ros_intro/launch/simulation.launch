@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<launch>
+  <node name="simulator" pkg="tek4030_ros_intro" type="simulator" />
+  <node name="controller" pkg="tek4030_ros_intro" type="controller" />
+</launch>
+
