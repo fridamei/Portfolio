@@ -1,0 +1,49 @@
+#!/usr/bin/python3
+import instapy
+import argparse
+import cv2
+
+parser = argparse.ArgumentParser(description='Convert image to grayscale or sepia using python, numpy, numba or cython')
+#metavar('') for cleaner -h printing
+parser.add_argument('-f', '--file', metavar='', help='The filename of file to apply filter to')
+
+#action='store_true' sets the default value to false and to true if the flag is set
+# make gray and sepia mutually exclusive so that only one of them can be set at a time
+filter_type = parser.add_mutually_exclusive_group()
+filter_type.add_argument('-se', '--sepia', action='store_true', help='Select sepia filter')
+filter_type.add_argument('-g', '--gray', action='store_true', help='Select gray filter')
+
+# For resizing photo
+parser.add_argument('-sc', '--scale', type=float, metavar='', help='Scale factor to resize image')
+
+#Choose implementation. Limit valid arguments to valid implementations
+parser.add_argument('-i', '--implement', metavar='', choices=['python', 'numpy', 'numba', 'cython'],  help='Choose the implementation')
+
+parser.add_argument('-o', '--out', metavar='', help='The output filename')
+
+# Parse arguments
+args = parser.parse_args()
+
+def resize(img_file):
+    """ 
+    Resizes an image in place according to scaling factor
+
+    Args
+	param1 filename of file to be resized
+    """
+    img = cv2.imread(args.file)
+    resized = cv2.resize(img, (0,0), fx=args.scale, fy=args.scale)
+    cv2.imwrite(args.file, resized)
+
+#Run code
+# if scale flag is set
+if args.scale != None:
+    resize(args.file)
+
+# If the gray flag is set:
+if args.gray:
+    instapy.grayscale_image(args.file, args.out, args.implement)
+
+# If the sepia flag is set:
+if args.sepia:
+    instapy.sepia_image(args.file, args.out, args.implement)
